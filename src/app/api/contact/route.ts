@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Only initialize Resend if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 // Input sanitization function
 function sanitizeInput(input: string): string {
@@ -52,6 +53,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Privacy consent is required' },
         { status: 400 }
+      )
+    }
+
+    // Check if email service is configured
+    if (!resend) {
+      console.log('Contact form submission received but email service not configured:', {
+        name, email, company, stage, message: message.substring(0, 100)
+      })
+      return NextResponse.json(
+        { error: 'Email service is temporarily unavailable. Please try emailing hello@dueready.com directly.' },
+        { status: 503 }
       )
     }
 
