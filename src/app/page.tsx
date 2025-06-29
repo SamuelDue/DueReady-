@@ -54,16 +54,55 @@ function ScrollingWords() {
   }
 
   return (
-    <span className="inline-block relative" style={{ width: '240px', height: '1.2em', overflow: 'visible', verticalAlign: 'baseline' }}>
+    <span className="scrolling-words-container inline-block relative">
       <span 
         key={currentWordIndex}
-        className="text-gray-400 absolute left-0 animate-slide-up whitespace-nowrap"
-        style={{ top: '0.36em', lineHeight: 'inherit', display: 'inline-block' }}
+        className="scrolling-words-text text-gray-400 absolute left-0 animate-slide-up whitespace-nowrap"
       >
         {words[currentWordIndex]}
       </span>
       
       <style jsx>{`
+        /* Desktop positioning (default) */
+        .scrolling-words-container {
+          width: 240px;
+          height: 1.2em;
+          overflow: visible;
+          vertical-align: baseline;
+        }
+        
+        .scrolling-words-text {
+          top: 0.36em;
+          line-height: inherit;
+          display: inline-block;
+        }
+        
+        /* Mobile positioning - adjust these values as needed */
+        @media (max-width: 768px) {
+          .scrolling-words-container {
+            width: 200px; /* Smaller width on mobile */
+            height: 1.1em;
+            vertical-align: baseline;
+          }
+          
+          .scrolling-words-text {
+            top: 0.2em; /* Higher position on mobile */
+            font-size: 0.95em; /* Slightly smaller on mobile if needed */
+          }
+        }
+        
+        /* Very small mobile screens */
+        @media (max-width: 480px) {
+          .scrolling-words-container {
+            width: 180px;
+          }
+          
+          .scrolling-words-text {
+            top: 0.1em; /* Even higher on very small screens */
+            font-size: 0.9em;
+          }
+        }
+        
         @keyframes slide-up {
           0% {
             transform: translateY(100%);
