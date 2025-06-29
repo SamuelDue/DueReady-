@@ -18,10 +18,12 @@ html {
   .floating-glow-2,
   .floating-glow-3,
   .floating-glow-4 {
+    display: none; /* Hide decorative animations on mobile to save battery */
     animation: none !important;
     transform: none !important;
   }
   
+  /* Optimized scroll animations for mobile performance */
   .scroll-animate {
     transition-duration: 0.4s !important;
   }
@@ -348,5 +350,72 @@ html {
   .animate-blur-in-delayed-2 {
     animation: blur-in 1.5s ease-out 1s forwards;
     opacity: 0;
+  }
+}
+
+/* MOBILE SCROLLING PERFORMANCE FIXES */
+@media (max-width: 768px) {
+  /* Disable complex scroll animations on mobile for smooth scrolling */
+  .scroll-animate {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  
+  /* Simplify scrolling words animation on mobile */
+  .scrolling-words-text {
+    animation-duration: 1.5s !important;
+    animation-timing-function: ease-out !important;
+  }
+  
+  /* Hardware acceleration for smooth scrolling */
+  .scrolling-words-container {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: auto;
+  }
+  
+  /* Disable hover animations on mobile */
+  .group:hover > * {
+    transform: none !important;
+  }
+  
+  /* Optimize scrolling performance - disable all fade/blur animations */
+  [class*="fade-"], 
+  [class*="blur-"], 
+  [class*="slide-"],
+  .animate-blur-in,
+  .animate-blur-in-delayed,
+  .animate-blur-in-delayed-2 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Disable intersection observer animations on mobile */
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .stagger-children {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Reduce animation complexity for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .scrolling-words-text {
+    animation: none !important;
   }
 }

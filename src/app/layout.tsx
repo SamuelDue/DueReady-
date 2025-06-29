@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   description: "Financial, legal, and compliance readiness for startups",
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: '32x32' }
+      { url: '/favicon.svg?v=4', type: 'image/svg+xml' },
+      { url: '/favicon.ico?v=4', sizes: '32x32' }
     ],
     apple: [
-      { url: '/favicon.svg', sizes: '180x180' }
+      { url: '/favicon.svg?v=4', sizes: '180x180' }
     ]
   },
 };
@@ -43,9 +43,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Favicon Meta Tags */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
+        <link rel="apple-touch-icon" href="/favicon.svg?v=4" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" content="#000000" />
         
