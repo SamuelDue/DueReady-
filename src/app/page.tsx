@@ -77,7 +77,7 @@ function ScrollingWords() {
           display: inline-block;
         }
         
-        /* Mobile positioning - adjust these values as needed */
+        /* Mobile positioning - adjusted higher */
         @media (max-width: 768px) {
           .scrolling-words-container {
             width: 200px; /* Smaller width on mobile */
@@ -86,7 +86,7 @@ function ScrollingWords() {
           }
           
           .scrolling-words-text {
-            top: 0.2em; /* Higher position on mobile */
+            top: 0.3em; /* Slightly lower position on mobile */
             font-size: 0.95em; /* Slightly smaller on mobile if needed */
           }
         }
@@ -98,7 +98,7 @@ function ScrollingWords() {
           }
           
           .scrolling-words-text {
-            top: 0.1em; /* Even higher on very small screens */
+            top: 0.25em; /* Slightly lower on very small screens */
             font-size: 0.9em;
           }
         }
@@ -423,48 +423,6 @@ export default function Home() {
       </section>
 
       <Footer />
-
-      {/* Global styles for mobile optimizations */}
-      <style jsx global>{`
-        /* Simplified mobile animations */
-        @media (max-width: 768px) {
-          .floating-glow-1,
-          .floating-glow-2,
-          .floating-glow-3,
-          .floating-glow-4 {
-            animation: none !important;
-            transform: none !important;
-          }
-          
-          .scroll-animate {
-            transition-duration: 0.4s !important;
-          }
-          
-          .fade-up {
-            transform: translateY(20px) !important;
-          }
-          
-          .fade-left {
-            transform: translateX(-20px) !important;
-          }
-          
-          .fade-right {
-            transform: translateX(20px) !important;
-          }
-          
-          .stagger-children > * {
-            transform: translateY(10px) !important;
-            transition-duration: 0.4s !important;
-          }
-        }
-        
-        /* Ensure proper button centering on all devices */
-        button {
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-        }
-      `}</style>
     </div>
   )
 }

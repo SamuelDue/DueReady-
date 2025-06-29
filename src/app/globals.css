@@ -548,3 +548,61 @@ html {
     padding-bottom: 0.125rem !important;
   }
 }
+
+/* Additional aggressive mobile button height fixes */
+@media (max-width: 768px) {
+  /* Override all Tailwind padding classes */
+  .py-1 {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+  
+  .py-2 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  
+  /* Target h-auto buttons */
+  .h-auto {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+  
+  /* Target all buttons with padding classes */
+  button[class*="py-"] {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+}
+
+/* AGGRESSIVE mobile button height fixes - HIGHEST PRIORITY */
+@media (max-width: 768px) {
+  /* Target all Tailwind padding utility classes */
+  .py-1 {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+  
+  .py-2 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  
+  /* Target h-auto buttons specifically */
+  .h-auto {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+  
+  /* Super specific button targeting */
+  button[class*="py-"] {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+  
+  /* Target all buttons and force smaller padding */
+  button {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+}
