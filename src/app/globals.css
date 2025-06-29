@@ -127,8 +127,8 @@ html {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   
-  /* AGGRESSIVE button height fixes for mobile */
-  /* Override all Tailwind padding classes */
+  /* AGGRESSIVE BUTTON HEIGHT FIXES FOR MOBILE */
+  /* Override Tailwind padding utility classes */
   .py-1 {
     padding-top: 0.125rem !important;
     padding-bottom: 0.125rem !important;
@@ -139,8 +139,14 @@ html {
     padding-bottom: 0.25rem !important;
   }
   
-  /* Target buttons with inline styles and h-auto */
-  button[class*="py-"], button.h-auto, .h-auto {
+  /* Target buttons with h-auto and any padding classes */
+  .h-auto {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
+  }
+  
+  /* Super specific targeting for button elements */
+  button[class*="py-"] {
     padding-top: 0.125rem !important;
     padding-bottom: 0.125rem !important;
   }
