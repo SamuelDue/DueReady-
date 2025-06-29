@@ -13,10 +13,44 @@ html {
     overflow-x: hidden;
   }
   
-  /* Improve touch targets */
+  /* Simplified mobile animations for performance */
+  .floating-glow-1,
+  .floating-glow-2,
+  .floating-glow-3,
+  .floating-glow-4 {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .scroll-animate {
+    transition-duration: 0.4s !important;
+  }
+  
+  .fade-up {
+    transform: translateY(20px) !important;
+  }
+  
+  .fade-left {
+    transform: translateX(-20px) !important;
+  }
+  
+  .fade-right {
+    transform: translateX(20px) !important;
+  }
+  
+  .stagger-children > * {
+    transform: translateY(10px) !important;
+    transition-duration: 0.4s !important;
+  }
+  
+  /* Improve touch targets and reduce button height on mobile */
   button, a, [role="button"] {
     min-height: 44px;
+    min-width: 44px;
     touch-action: manipulation;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   /* Better spacing for mobile */
@@ -65,11 +99,6 @@ html {
   textarea:focus {
     outline: 2px solid rgba(255, 255, 255, 0.5);
     outline-offset: 2px;
-  }
-  
-  /* Additional mobile performance optimizations */
-  .floating-glow-1, .floating-glow-2, .floating-glow-3, .floating-glow-4 {
-    display: none; /* Hide decorative animations on mobile to save battery */
   }
   
   /* Optimize gradients for mobile */

@@ -1,19 +1,35 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({ 
+const geist = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
 });
-const dmSans = DM_Sans({
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
-      title: "DueReady - De-risking High-Growth Startups",
-  description: "De-risking high-growth startups for investors, acquirers, and regulators. The largest startup accounting firm in the US.",
+  title: "DueReady - Deal Readiness for Startups",
+  description: "Financial, legal, and compliance readiness for startups",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
+  themeColor: '#000000',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'DueReady'
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
@@ -22,13 +38,45 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
+    <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Mobile Optimization Meta Tags */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        {/* Performance Optimization */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Mobile-specific CSS */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 768px) {
+              * {
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                user-select: none;
+              }
+              
+              input, textarea, button {
+                -webkit-user-select: auto;
+                user-select: auto;
+              }
+              
+              body {
+                -webkit-overflow-scrolling: touch;
+                overflow-x: hidden;
+              }
+            }
+          `
+        }} />
       </head>
-      <body className={`${dmSans.className} ${spaceGrotesk.variable} ${dmSans.variable}`}>
-          {children}
-        </body>
-      </html>
+      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
+        {children}
+      </body>
+    </html>
   );
 }
