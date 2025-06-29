@@ -1,0 +1,328 @@
+'use client'
+
+import { Button } from '@/components/ui/button'
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { X, Plus } from 'lucide-react'
+
+export default function ExpertsPage() {
+  const [selectedExpert, setSelectedExpert] = useState<number | null>(null)
+
+  const experts = [
+    {
+      id: 1,
+      name: "Samuel Ade",
+      role: "Founder & Readiness Strategist",
+      shortBio: "Samuel is a sales and marketing operator with experience running teams and supporting startups on brand, growth, and positioning.",
+      fullBio: "Samuel is a commercially minded operator with a background in leading sales teams and shaping marketing strategy for growth-focused businesses. Having worked closely with startups and small companies, he brings sharp communication, structured thinking, and real-world execution to every engagement. With a foundation in branding and revenue generation, Samuel focuses on helping founders present their companies with confidence — aligning story, systems, and materials to meet investor and acquirer expectations.",
+      tags: ["Sales Leadership", "Marketing Strategy"],
+      experience: "10+ years",
+      companies: "25+ startups supported",
+      specialties: ["Sales Leadership", "Marketing Strategy", "Startup Collaboration", "Client Communication"],
+      isComingSoon: false
+    }
+  ]
+
+  useEffect(() => {
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in')
+        }
+      })
+    }, observerOptions)
+
+    // Observe all elements with scroll-animate class
+    const animatedElements = document.querySelectorAll('.scroll-animate')
+    animatedElements.forEach((el) => observer.observe(el))
+
+    // Parallax effect
+    const handleScroll = () => {
+      const scrolled = window.pageYOffset
+      const parallaxElements = document.querySelectorAll('.parallax-bg')
+      parallaxElements.forEach((element, index) => {
+        const speed = 0.5 + (index * 0.1)
+        const yPos = -(scrolled * speed)
+        ;(element as HTMLElement).style.transform = `translateY(${yPos}px)`
+      })
+    }
+
+    // Handle Escape key to close modal
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && selectedExpert) {
+        setSelectedExpert(null)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedExpert])
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedExpert) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedExpert])
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-gray-900 text-white relative overflow-x-hidden">
+      <Navbar />
+      
+      {/* Parallax Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="parallax-bg absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl"></div>
+        <div className="parallax-bg absolute top-96 left-10 w-96 h-96 bg-gradient-to-br from-white/3 to-transparent rounded-full blur-3xl"></div>
+        <div className="parallax-bg absolute bottom-96 right-20 w-80 h-80 bg-gradient-to-br from-white/4 to-transparent rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl text-center mx-auto scroll-animate fade-up">
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight font-[family-name:var(--font-space-grotesk)]">
+              Our <span className="text-gray-400">Experts</span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Meet our growing team of seasoned professionals who make startups fundable, acquirable, and compliant
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 scroll-animate fade-up">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">15+</div>
+              <div className="text-gray-300">Expert Professionals</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">20+</div>
+              <div className="text-gray-300">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">25+</div>
+              <div className="text-gray-300">Startups Served</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-white mb-2">$50M+</div>
+              <div className="text-gray-300">In Funding Facilitated</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 scroll-animate fade-up">
+            <h2 className="text-xl sm:text-2xl font-bold mb-6">Leadership Team</h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Led by seasoned professionals who combine Big Four expertise with real-world startup experience
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-animate fade-up stagger-children">
+            {experts.map((expert, index) => (
+              <div key={expert.id} className="group relative">
+                {/* Full Expert Card */}
+                <div className="bg-white/5 border border-white/10 rounded-md p-4 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] hover:-rotate-0.5 relative overflow-hidden">
+                  {/* Floating accent */}
+                  <div className="absolute -top-1 -right-1 w-8 h-8 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-lg group-hover:scale-150 transition-transform duration-500"></div>
+                  
+                  <div className="relative">
+                    {/* Large prominent image */}
+                    <div className="bg-gradient-to-br from-white/15 to-white/25 w-40 h-40 rounded-md flex items-center justify-center border border-white/30 mb-4 mx-auto group-hover:from-white/25 group-hover:to-white/35 transition-all duration-300">
+                      <span className="text-white/60 text-sm font-medium">Photo</span>
+                    </div>
+                    
+                    <div className="text-center">
+                      <h3 className="text-lg font-bold text-white mb-1">{expert.name}</h3>
+                      <p className="text-sm text-gray-400 mb-3">{expert.role}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Plus button positioned over the card */}
+                <button
+                  onClick={() => setSelectedExpert(expert.id)}
+                  className="absolute -bottom-3 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white/30 hover:scale-110 transition-all duration-300 group-hover:rotate-90"
+                >
+                  <Plus className="w-5 h-5 text-white" />
+                </button>
+              </div>
+            ))}
+
+            {/* Additional placeholder cards for future team members */}
+            <div className="group relative opacity-60">
+              <div className="bg-white/5 border border-white/10 rounded-md p-4 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] hover:rotate-0.5 relative overflow-hidden">
+                <div className="absolute -top-1 -left-1 w-8 h-8 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-full blur-lg group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-white/15 to-white/25 w-40 h-40 rounded-md flex items-center justify-center border border-white/30 mb-4 mx-auto">
+                    <span className="text-white/40 text-sm font-medium">Photo</span>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-white/60 mb-1">Team Member</h3>
+                    <p className="text-sm text-gray-400 mb-3">Coming Soon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative opacity-60">
+              <div className="bg-white/5 border border-white/10 rounded-md p-4 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] hover:-rotate-0.5 relative overflow-hidden">
+                <div className="absolute -bottom-1 -left-1 w-8 h-8 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-full blur-lg group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-white/15 to-white/25 w-40 h-40 rounded-md flex items-center justify-center border border-white/30 mb-4 mx-auto">
+                    <span className="text-white/40 text-sm font-medium">Photo</span>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-white/60 mb-1">Team Member</h3>
+                    <p className="text-sm text-gray-400 mb-3">Coming Soon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative opacity-60">
+              <div className="bg-white/5 border border-white/10 rounded-md p-4 hover:bg-white/8 transition-all duration-500 hover:scale-[1.02] hover:rotate-0.5 relative overflow-hidden">
+                <div className="absolute -top-1 -right-1 w-8 h-8 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-full blur-lg group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-white/15 to-white/25 w-40 h-40 rounded-md flex items-center justify-center border border-white/30 mb-4 mx-auto">
+                    <span className="text-white/40 text-sm font-medium">Photo</span>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-white/60 mb-1">Team Member</h3>
+                    <p className="text-sm text-gray-400 mb-3">Coming Soon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="scroll-animate fade-up">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Ready to Work with Our Experts?</h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Connect with our team of seasoned professionals and take the first step toward making your startup deal-ready.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-4 sm:px-6 py-1 sm:py-2 h-auto font-medium text-base"
+                asChild
+              >
+                <Link href="/contact">Work With Our Team</Link>
+              </Button>
+              
+              <Button 
+                variant="ghost"
+                className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-4 sm:px-6 py-1 sm:py-2 h-auto font-medium text-base"
+                asChild
+              >
+                <Link href="/join-us">Join Our Team</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expert Modal */}
+      {selectedExpert && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSelectedExpert(null)
+            }
+          }}
+        >
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-white/20 rounded-md max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            {(() => {
+              const expert = experts.find(e => e.id === selectedExpert)
+              if (!expert) return null
+              
+              return (
+                <div className="relative">
+                  {/* Close button */}
+                  <button
+                    onClick={() => setSelectedExpert(null)}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300 p-2"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+
+                  {/* Modal content */}
+                  <div className="p-8">
+                    <div className="flex items-start gap-6 mb-6">
+                      <div className="bg-gradient-to-br from-white/15 to-white/25 w-32 h-32 rounded-md flex items-center justify-center border border-white/30 flex-shrink-0">
+                        <span className="text-white/60 text-sm font-medium">Photo</span>
+                      </div>
+                      
+                      <div className="flex-1">
+                        <h2 className="text-2xl font-bold text-white mb-2">{expert.name}</h2>
+                        <p className="text-lg text-gray-300 mb-4">{expert.role}</p>
+                      </div>
+                    </div>
+
+                    {/* Full biography */}
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold text-white mb-3">About</h3>
+                      <p className="text-gray-300 leading-relaxed">{expert.fullBio}</p>
+                    </div>
+
+                    {/* Specialties */}
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold text-white mb-3">Core Specialties</h3>
+                      <div className="grid grid-cols-2 gap-2">
+                        {expert.specialties.map((specialty, index) => (
+                          <div key={index} className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                            <span className="text-gray-300 text-sm">{specialty}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })()}
+          </div>
+        </div>
+      )}
+
+      <Footer />
+    </div>
+  )
+} 
