@@ -77,7 +77,7 @@ function ScrollingWords() {
           display: inline-block;
         }
         
-        /* Mobile positioning - adjusted higher */
+        /* Mobile positioning - more reliable for real devices */
         @media (max-width: 768px) {
           .scrolling-words-container {
             width: 200px; /* Smaller width on mobile */
@@ -86,7 +86,8 @@ function ScrollingWords() {
           }
           
           .scrolling-words-text {
-            top: 0.3em; /* Slightly lower position on mobile */
+            top: 50%;
+            transform: translateY(-45%); /* More reliable positioning */
             font-size: 0.95em; /* Slightly smaller on mobile if needed */
           }
         }
@@ -98,7 +99,8 @@ function ScrollingWords() {
           }
           
           .scrolling-words-text {
-            top: 0.25em; /* Slightly lower on very small screens */
+            top: 50%;
+            transform: translateY(-40%); /* Consistent positioning */
             font-size: 0.9em;
           }
         }
