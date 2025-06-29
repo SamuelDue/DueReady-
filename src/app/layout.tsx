@@ -15,6 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "DueReady - Deal Readiness for Startups",
   description: "Financial, legal, and compliance readiness for startups",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' }
+    ],
+    apple: [
+      { url: '/favicon.svg', sizes: '180x180' }
+    ]
+  },
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -40,6 +49,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon Meta Tags */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="theme-color" content="#000000" />
+        
         {/* Mobile Optimization Meta Tags */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
