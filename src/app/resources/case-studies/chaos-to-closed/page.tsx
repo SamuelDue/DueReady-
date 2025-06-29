@@ -58,7 +58,7 @@ export default function ChaosToClosedCaseStudy() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 z-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-12 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className="scroll-animate fade-up">
@@ -105,7 +105,7 @@ export default function ChaosToClosedCaseStudy() {
       </section>
 
       {/* Case Study Overview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-4xl mx-auto">
           <div className="scroll-animate fade-up mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -265,7 +265,7 @@ export default function ChaosToClosedCaseStudy() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animate fade-up">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Ready to Transform Your Deal Readiness?</h2>

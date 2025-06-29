@@ -9,7 +9,7 @@ export default function Partners() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-20 px-12 sm:px-10 lg:px-12">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight font-[family-name:var(--font-space-grotesk)] leading-tight">
             Partner with <span className="text-gray-400">DueReady</span>
@@ -21,7 +21,7 @@ export default function Partners() {
       </section>
 
       {/* Partner Benefits Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8">
@@ -109,7 +109,7 @@ export default function Partners() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
             Ready to Partner with DueReady?

@@ -59,7 +59,7 @@ export default function WhoWeHelpPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
           <div className="max-w-4xl text-center mx-auto scroll-animate fade-up">
             <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight font-[family-name:var(--font-space-grotesk)]">
               Who We <span className="text-gray-400">Help</span>
@@ -75,7 +75,7 @@ export default function WhoWeHelpPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="scroll-animate fade-left">
@@ -112,7 +112,7 @@ export default function WhoWeHelpPage() {
       </section>
 
       {/* Who We Work With Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 scroll-animate fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-8">
@@ -216,7 +216,7 @@ export default function WhoWeHelpPage() {
       </section>
 
       {/* Our Process Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 scroll-animate fade-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
@@ -321,7 +321,7 @@ export default function WhoWeHelpPage() {
       <div className="border-t border-white/10"></div>
       
       {/* Fluid Banner */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
+      <section className="py-16 px-12 sm:px-10 lg:px-12 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center scroll-animate fade-up">
             <div className="max-w-4xl mx-auto relative">

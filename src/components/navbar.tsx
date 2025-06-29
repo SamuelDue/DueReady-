@@ -27,7 +27,7 @@ export function Navbar() {
   if (!mounted) {
     return (
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center pt-2 md:pt-0">
               <Link href="/" className="text-xl font-bold text-white tracking-tight font-[family-name:var(--font-space-grotesk)] hover:text-gray-200 transition-colors duration-300">
@@ -54,7 +54,7 @@ export function Navbar() {
                     style={{ top: '80px' }}
                     onMouseLeave={() => setIsServicesDropdownOpen(false)}
                   >
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
                       {/* Header */}
                       <div className="py-6 border-b border-white/10">
                         <div className="text-center">
@@ -145,7 +145,7 @@ export function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'border-b border-white/20 backdrop-blur-md' : 'border-b border-white/10 backdrop-blur-sm'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center pt-2 md:pt-0">
@@ -175,7 +175,7 @@ export function Navbar() {
                   style={{ top: '80px' }}
                   onMouseLeave={() => setIsServicesDropdownOpen(false)}
                 >
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
                     {/* Header */}
                     <div className="py-6 border-b border-white/10">
                       <div className="text-center">

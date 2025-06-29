@@ -58,7 +58,7 @@ export default function LegalCorporateReadinessPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
           <div className="max-w-4xl text-center mx-auto scroll-animate fade-up">
             <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight font-[family-name:var(--font-space-grotesk)]">
               Legal & Corporate <span className="text-gray-400">Readiness</span>
@@ -71,7 +71,7 @@ export default function LegalCorporateReadinessPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="scroll-animate fade-left">
@@ -83,7 +83,7 @@ export default function LegalCorporateReadinessPage() {
               </p>
             </div>
             <div className="space-y-6 scroll-animate fade-right stagger-children">
-              <h3 className="text-xl font-bold text-white mb-4">Our focus areas:</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-left">Our focus areas:</h3>
               <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
@@ -108,7 +108,7 @@ export default function LegalCorporateReadinessPage() {
       </section>
 
       {/* Key Benefits Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 scroll-animate fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-8">
@@ -157,7 +157,7 @@ export default function LegalCorporateReadinessPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 scroll-animate fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-8">
@@ -230,7 +230,7 @@ export default function LegalCorporateReadinessPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animate fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Ready to Bulletproof Your Legal Foundation?</h2>

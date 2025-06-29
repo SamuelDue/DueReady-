@@ -77,7 +77,7 @@ function ScrollingWords() {
           display: inline-block;
         }
         
-        /* Mobile positioning - more reliable for real devices */
+        /* Mobile positioning - natural baseline alignment */
         @media (max-width: 768px) {
           .scrolling-words-container {
             width: 200px; /* Smaller width on mobile */
@@ -86,9 +86,14 @@ function ScrollingWords() {
           }
           
           .scrolling-words-text {
-            top: 50%;
-            transform: translateY(-45%); /* More reliable positioning */
+            top: 0.25em; /* Slightly higher for perfect baseline alignment on mobile */
+            bottom: auto; /* Reset bottom positioning */
             font-size: 0.95em; /* Slightly smaller on mobile if needed */
+          }
+          
+          /* Mobile-specific animation with baseline alignment */
+          .animate-slide-up {
+            animation: slide-up-mobile 3s ease-in-out;
           }
         }
         
@@ -99,12 +104,18 @@ function ScrollingWords() {
           }
           
           .scrolling-words-text {
-            top: 50%;
-            transform: translateY(-40%); /* Consistent positioning */
+            top: 0.25em; /* Slightly higher for perfect baseline alignment on small screens */
+            bottom: auto; /* Reset bottom positioning */
             font-size: 0.9em;
+          }
+          
+          /* Small mobile-specific animation with baseline alignment */
+          .animate-slide-up {
+            animation: slide-up-small-mobile 3s ease-in-out;
           }
         }
         
+        /* Desktop animation */
         @keyframes slide-up {
           0% {
             transform: translateY(100%);
@@ -121,6 +132,50 @@ function ScrollingWords() {
           100% {
             transform: translateY(-100%);
             opacity: 0;
+          }
+        }
+        
+        /* Mobile animation with baseline alignment */
+        @media (max-width: 768px) {
+          @keyframes slide-up-mobile {
+            0% {
+              transform: translateY(100%);
+              opacity: 0;
+            }
+            15% {
+              transform: translateY(0%);
+              opacity: 1;
+            }
+            85% {
+              transform: translateY(0%);
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-100%);
+              opacity: 0;
+            }
+          }
+        }
+        
+        /* Small mobile animation with baseline alignment */
+        @media (max-width: 480px) {
+          @keyframes slide-up-small-mobile {
+            0% {
+              transform: translateY(100%);
+              opacity: 0;
+            }
+            15% {
+              transform: translateY(0%);
+              opacity: 1;
+            }
+            85% {
+              transform: translateY(0%);
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-100%);
+              opacity: 0;
+            }
           }
         }
         
@@ -150,28 +205,28 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex items-center min-h-screen pt-20 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12 w-full">
           <div className="max-w-4xl scroll-animate fade-up">
             <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight animate-blur-in font-[family-name:var(--font-space-grotesk)] leading-tight" style={{ overflow: 'visible' }}>
               <span className="block">The fastest way to</span>
               <span className="inline">become <ScrollingWords /></span>
-            </h1>
+          </h1>
             
             <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl leading-relaxed animate-blur-in-delayed">
               Financial, legal, and compliance readiness for startups - so you can focus on building, not chasing documents.
-            </p>
+          </p>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-blur-in-delayed-2">
               <Button 
-                className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-4 sm:px-6 py-3 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[44px]"
+                className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-3 sm:px-4 py-2 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[40px]"
                 asChild
               >
                 <Link href="/contact">Get Deal Ready</Link>
-              </Button>
+            </Button>
               
               <Button 
                 variant="ghost"
-                className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-white border border-blue-500/20 hover:from-blue-500/20 hover:to-purple-500/20 hover:border-blue-500/30 transition-all duration-300 px-4 sm:px-6 py-3 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[44px]"
+                className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-white border border-blue-500/20 hover:from-blue-500/20 hover:to-purple-500/20 hover:border-blue-500/30 transition-all duration-300 px-3 sm:px-4 py-2 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[40px]"
                 asChild
               >
                 <Link href="/resources/readiness-assessment">Take Assessment →</Link>
@@ -182,83 +237,40 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-6xl mx-auto">
-          {/* Title in top left corner */}
-          <div className="mb-12 scroll-animate fade-up">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-              Who we are
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="scroll-animate fade-left">
-              {/* Team Collaboration Image - Simplified animations on mobile */}
-              <div className="relative group">
-                {/* Subtle background glow - Hidden on mobile */}
-                <div className="absolute -inset-1 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg blur-sm group-hover:blur-md transition-all duration-1000 hidden md:block"></div>
-                
-                {/* Main image container with simplified mobile animations */}
-                <div className="relative overflow-hidden rounded-lg md:group-hover:rounded-xl transition-all duration-300 md:duration-1000">
-                  {/* Animated border - Simplified on mobile */}
-                  <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-r from-blue-500/30 via-purple-500/30 via-blue-400/30 to-purple-500/30 bg-[length:200%_200%] animate-border-flow opacity-60 md:group-hover:opacity-100 transition-opacity duration-300 md:duration-1500 hidden md:block">
-                    <div className="w-full h-full bg-gray-900 rounded-lg"></div>
-                  </div>
-                  
-                  <div className="relative rounded-lg overflow-hidden">
-                    <img 
-                      src="/team-collaboration.jpg" 
-                      alt="DueReady team collaboration - diverse professionals working together on startup solutions"
-                      className="w-full h-80 object-cover transition-all duration-300 md:duration-1000 md:group-hover:scale-[1.02]"
-                      style={{
-                        filter: 'brightness(0.9) contrast(1.1) saturate(0.9)',
-                      }}
-                    />
-                    
-                    {/* Simple brand overlay - Simplified on mobile */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 to-purple-500/10 mix-blend-overlay md:group-hover:from-blue-500/20 md:group-hover:to-purple-500/15 transition-all duration-300 md:duration-1000"></div>
-                  </div>
-                </div>
-
-                {/* CSS for animated border - Only active on desktop */}
-                <style jsx>{`
-                  @media (min-width: 768px) {
-                    @keyframes border-flow {
-                      0% { 
-                        background-position: 0% 0%;
-                      }
-                      100% { 
-                        background-position: 200% 200%;
-                      }
-                    }
-                    
-                    .animate-border-flow {
-                      animation: border-flow 6s linear infinite;
-                    }
-                  }
-                `}</style>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Title - Left side on desktop, top on mobile */}
+            <div className="lg:col-span-1 scroll-animate fade-up">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 lg:mb-0">
+                Who we are
+              </h2>
             </div>
             
-            <div className="space-y-6 text-lg text-gray-300 leading-relaxed scroll-animate fade-right stagger-children">
-              <p>
-                We're a specialist collective of fractional legal, financial, and tech experts dedicated to one mission: making startups deal-ready.
-              </p>
-              <p>
-                Whether you're navigating a funding round, preparing for an acquisition, or fixing compliance gaps before they derail a deal, our vetted specialists bring the experience, speed, and precision required to deliver.
-              </p>
-              <p>
-                Built by founders who've lived through the fundraising process, we understand exactly where deals fall apart — and how to prevent it.
-              </p>
-              
-              {/* Call-to-action */}
-              <div className="pt-4">
-                <Button 
-                  className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-4 sm:px-6 py-3 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[44px]"
-                  asChild
-                >
-                  <Link href="/experts">Meet Our Experts</Link>
-                </Button>
+            {/* Content - Right side on desktop, below title on mobile */}
+            <div className="lg:col-span-2">
+              <div className="text-lg text-gray-300 leading-relaxed scroll-animate fade-up stagger-children">
+                <div className="space-y-5 sm:space-y-6 mb-6 sm:mb-8">
+                  <p className="leading-relaxed">
+                    We're a specialist collective of fractional legal, financial, and tech experts dedicated to one mission: making startups deal-ready.
+                  </p>
+                  <p className="leading-relaxed">
+                    Whether you're navigating a funding round, preparing for an acquisition, or fixing compliance gaps before they derail a deal, our vetted specialists bring the experience, speed, and precision required to deliver.
+                  </p>
+                  <p className="leading-relaxed">
+                    Built by founders who've lived through the fundraising process, we understand exactly where deals fall apart — and how to prevent it.
+                  </p>
+                </div>
+                
+                {/* Call-to-action */}
+                <div className="pt-2 sm:pt-4">
+                  <Button 
+                    className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-3 sm:px-4 py-2 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[40px]"
+                    asChild
+                  >
+                    <Link href="/experts">Meet Our Experts</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -266,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section id="what-we-do" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section id="what-we-do" className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 scroll-animate fade-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
@@ -298,7 +310,7 @@ export default function Home() {
                 </p>
                 <Button 
                   variant="ghost" 
-                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-4 py-3 sm:py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[44px]"
+                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-3 py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[36px]"
                   asChild
                 >
                   <Link href="/services/compliance-risk-audit">Learn More →</Link>
@@ -326,7 +338,7 @@ export default function Home() {
                 </p>
                 <Button 
                   variant="ghost" 
-                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-4 py-3 sm:py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[44px]"
+                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-3 py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[36px]"
                   asChild
                 >
                   <Link href="/services/tech-data-room-optimization">Learn More →</Link>
@@ -354,7 +366,7 @@ export default function Home() {
                 </p>
                 <Button 
                   variant="ghost" 
-                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-4 py-3 sm:py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[44px]"
+                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-3 py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[36px]"
                   asChild
                 >
                   <Link href="/services/legal-corporate-readiness">Learn More →</Link>
@@ -382,7 +394,7 @@ export default function Home() {
                 </p>
                 <Button 
                   variant="ghost" 
-                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-4 py-3 sm:py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[44px]"
+                  className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-3 py-2 h-auto font-medium text-sm flex items-center justify-center min-h-[36px]"
                   asChild
                 >
                   <Link href="/services/financial-due-diligence-prep">Learn More →</Link>
@@ -396,7 +408,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5">
         <div className="max-w-4xl mx-auto text-center scroll-animate fade-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             See if you're deal-ready.
@@ -407,7 +419,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-4 sm:px-6 py-3 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[44px]"
+              className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-3 sm:px-4 py-2 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[40px]"
               asChild
             >
               <Link href="/contact">Get Deal Ready</Link>
@@ -415,7 +427,7 @@ export default function Home() {
             
             <Button 
               variant="ghost"
-              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-white border border-blue-500/20 hover:from-blue-500/20 hover:to-purple-500/20 hover:border-blue-500/30 transition-all duration-300 px-4 sm:px-6 py-3 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[44px]"
+              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-white border border-blue-500/20 hover:from-blue-500/20 hover:to-purple-500/20 hover:border-blue-500/30 transition-all duration-300 px-3 sm:px-4 py-2 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[40px]"
               asChild
             >
               <Link href="/resources/readiness-assessment">Take Assessment →</Link>

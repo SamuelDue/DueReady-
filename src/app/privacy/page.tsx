@@ -7,7 +7,7 @@ export default function Privacy() {
       <Navbar />
       
       {/* Privacy Policy Content */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-20 px-12 sm:px-10 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight font-[family-name:var(--font-space-grotesk)] leading-tight">
             Privacy <span className="text-gray-400">Policy</span>

@@ -82,7 +82,7 @@ export default function ResourcesPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
           <div className="max-w-4xl text-center mx-auto scroll-animate fade-up">
             <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight font-[family-name:var(--font-space-grotesk)]">
               Startup <span className="text-gray-400">Resources</span>
@@ -97,7 +97,7 @@ export default function ResourcesPage() {
 
 
       {/* Resource Categories */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 scroll-animate fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-8">
@@ -256,7 +256,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animate fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Stay Updated</h2>
@@ -285,7 +285,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animate fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Need Personalized Help?</h2>

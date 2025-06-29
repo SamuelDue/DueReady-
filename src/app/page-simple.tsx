@@ -150,7 +150,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex items-center min-h-screen pt-20 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12 w-full">
           <div className="max-w-4xl scroll-animate fade-up">
             <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight animate-blur-in font-[family-name:var(--font-space-grotesk)] leading-tight" style={{ overflow: 'visible' }}>
               <span className="block">The fastest way to</span>
@@ -182,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-6xl mx-auto">
           {/* Title in top left corner */}
           <div className="mb-12 scroll-animate fade-up">
@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section id="what-we-do" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section id="what-we-do" className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 scroll-animate fade-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
@@ -395,7 +395,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5">
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5">
         <div className="max-w-4xl mx-auto text-center scroll-animate fade-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             See if you're deal-ready.

@@ -59,7 +59,7 @@ export default function JoinUsPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12">
           <div className="max-w-4xl text-center mx-auto scroll-animate fade-up">
             <h1 className="text-4xl sm:text-6xl font-bold mb-6 tracking-tight font-[family-name:var(--font-space-grotesk)]">
               Work With <span className="text-gray-400">Growing Startups</span>
@@ -77,7 +77,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* Value Props */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section className="py-16 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-400/20 rounded-xl p-8 hover:from-blue-500/15 hover:to-blue-600/10 transition-all duration-300 scroll-animate fade-up group text-center overflow-hidden relative">
@@ -111,7 +111,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* Expertise Needed */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-16 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 scroll-animate fade-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -187,7 +187,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+      <section className="py-16 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 scroll-animate fade-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -226,7 +226,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-white/5 relative">
+      <section className="py-16 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animate fade-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Interested in working with DueReady?</h2>
