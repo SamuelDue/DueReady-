@@ -407,6 +407,170 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Latest Resources Section */}
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 scroll-animate fade-up">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Latest Resources
+            </h2>
+            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              Free guides, case studies, and tools to help you prepare your startup for funding and acquisition.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Featured Case Study */}
+            <div className="scroll-animate fade-up group cursor-pointer">
+              <Link href="/resources/case-studies/chaos-to-closed">
+                <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden h-full">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img 
+                      src="/Gemini_Generated_Image_p9g5dap9g5dap9g5.png"
+                      alt="From Chaos to Closed case study"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="px-2 py-1 rounded text-xs font-medium bg-purple-500/20 text-purple-300">
+                        Case Study
+                      </span>
+                      <span className="px-2 py-1 rounded text-xs font-medium bg-orange-500/20 text-orange-300">
+                        Featured
+                      </span>
+                    </div>
+                    <h3 className="text-white font-semibold mb-3 leading-tight group-hover:text-white/90 transition-colors duration-300">
+                      From Chaos to Closed: B2B SaaS Series A
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                      How professional deal readiness accelerated a funding round and preserved executive focus during critical growth.
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      12 min read
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Due Diligence Checklist */}
+            <div className="scroll-animate fade-up group cursor-pointer">
+              <Link href="/resources/templates/due-diligence-checklist">
+                <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden h-full">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img 
+                      src="/new image.png"
+                      alt="Due diligence checklist template"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="px-2 py-1 rounded text-xs font-medium bg-yellow-500/20 text-yellow-300">
+                        Checklist
+                      </span>
+                    </div>
+                    <h3 className="text-white font-semibold mb-3 leading-tight group-hover:text-white/90 transition-colors duration-300">
+                      The Complete Due Diligence Checklist
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                      Comprehensive checklist covering every aspect of due diligence preparation for funding rounds.
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      15 min read
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Hidden Cost Article */}
+            <div className="scroll-animate fade-up group cursor-pointer">
+              <Link href="/resources/insights/hidden-cost-almost-ready">
+                <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden h-full">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img 
+                      src="/Gemini_Generated_Image_f2debdf2debdf2de.png"
+                      alt="The hidden cost of almost ready article"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="px-2 py-1 rounded text-xs font-medium bg-cyan-500/20 text-cyan-300">
+                        Article
+                      </span>
+                    </div>
+                    <h3 className="text-white font-semibold mb-3 leading-tight group-hover:text-white/90 transition-colors duration-300">
+                      The Hidden Cost of 'Almost Ready'
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                      Why "almost ready" for due diligence often means "not ready at all" and how to avoid common pitfalls.
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      5 min read
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Featured Assessment Tool */}
+          <div className="scroll-animate fade-up">
+            <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/5 border border-blue-500/20 rounded-md p-8 hover:from-blue-500/15 hover:to-purple-500/10 transition-all duration-300">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-md text-sm font-medium">Interactive Tool</span>
+                    <span className="text-gray-400 text-sm">Free</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    DueReady Assessment
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    Get an instant, personalized assessment of your startup's readiness for funding, acquisition, or enterprise deals. Receive your score and actionable insights in minutes.
+                  </p>
+                  <div className="flex items-center gap-6 mb-6">
+                    <div className="text-sm text-gray-400">
+                      <span className="text-white font-medium">5 minutes</span> • Instant results
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      <span className="text-white font-medium">7 categories</span> • Comprehensive
+                    </div>
+                  </div>
+                  <Button 
+                    className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0 transition-all duration-300 rounded-md px-3 sm:px-4 py-2 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[40px]"
+                    asChild
+                  >
+                    <Link href="/resources/readiness-assessment">Take Assessment Now →</Link>
+                  </Button>
+                </div>
+                <div className="h-48 lg:h-64 rounded-md border border-white/30 overflow-hidden">
+                  <img 
+                    src="/Gemini_Generated_Image_q4o65eq4o65eq4o6.png"
+                    alt="Interactive deal readiness assessment interface"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* View All Resources CTA */}
+          <div className="text-center mt-12 scroll-animate fade-up">
+            <Button 
+              variant="ghost"
+              className="text-white hover:bg-white/30 hover:text-white transition-all duration-300 px-3 sm:px-4 py-2 sm:py-2 h-auto font-medium text-base flex items-center justify-center min-h-[40px]"
+              asChild
+            >
+              <Link href="/resources">View All Resources →</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5">
         <div className="max-w-4xl mx-auto text-center scroll-animate fade-up">
