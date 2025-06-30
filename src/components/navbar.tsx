@@ -272,7 +272,7 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-white/20 backdrop-blur-md mobile-menu">
+          <div className="md:hidden border-t border-white/20 bg-gray-900/95 backdrop-blur-md mobile-menu">
             <div className="px-3 pt-3 pb-4 space-y-2">
               <Link href="/" className="block px-4 py-3 text-base text-gray-300 hover:bg-white/30 hover:text-white transition-all duration-300 rounded-md">
                 Home
