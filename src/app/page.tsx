@@ -428,90 +428,75 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Featured Case Study */}
-            <div className="scroll-animate fade-up group cursor-pointer">
-              <Link href="/resources/case-studies/chaos-to-closed">
-                <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden">
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img 
-                      src="/Gemini_Generated_Image_p9g5dap9g5dap9g5.png"
-                      alt="From Chaos to Closed case study"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-1 rounded text-xs font-medium bg-purple-500/20 text-purple-300">
-                        Case Study
-                      </span>
-                    </div>
-                    <h3 className="text-white font-semibold mb-2 leading-tight group-hover:text-white/90 transition-colors duration-300 text-sm">
-                      From Chaos to Closed: B2B SaaS Series A
-                    </h3>
-                    <div className="text-xs text-gray-500">
-                      12 min read
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {/* Case Study */}
+            <Link href="/resources/case-studies/chaos-to-closed" className="scroll-animate fade-up group block">
+              <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden">
+                <div className="aspect-[16/8] overflow-hidden">
+                  <img 
+                    src="/Gemini_Generated_Image_p9g5dap9g5dap9g5.png"
+                    alt="From Chaos to Closed case study"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              </Link>
-            </div>
+                <div className="p-2">
+                  <div className="flex items-center gap-1 mb-1">
+                    <span className="px-1.5 py-0.5 rounded text-xs font-medium bg-purple-500/20 text-purple-300">
+                      Case Study
+                    </span>
+                  </div>
+                  <h3 className="text-white font-medium text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">
+                    From Chaos to Closed: B2B SaaS Series A
+                  </h3>
+                </div>
+              </div>
+            </Link>
 
-            {/* Due Diligence Checklist */}
-            <div className="scroll-animate fade-up group cursor-pointer">
-              <Link href="/resources/templates/due-diligence-checklist">
-                <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden">
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img 
-                      src="/new image.png"
-                      alt="Due diligence checklist template"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-1 rounded text-xs font-medium bg-yellow-500/20 text-yellow-300">
-                        Checklist
-                      </span>
-                    </div>
-                    <h3 className="text-white font-semibold mb-2 leading-tight group-hover:text-white/90 transition-colors duration-300 text-sm">
-                      The Complete Due Diligence Checklist
-                    </h3>
-                    <div className="text-xs text-gray-500">
-                      15 min read
-                    </div>
-                  </div>
+            {/* Checklist */}
+            <Link href="/resources/templates/due-diligence-checklist" className="scroll-animate fade-up group block">
+              <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden">
+                <div className="aspect-[16/8] overflow-hidden">
+                  <img 
+                    src="/new image.png"
+                    alt="Due diligence checklist template"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              </Link>
-            </div>
+                <div className="p-2">
+                  <div className="flex items-center gap-1 mb-1">
+                    <span className="px-1.5 py-0.5 rounded text-xs font-medium bg-yellow-500/20 text-yellow-300">
+                      Checklist
+                    </span>
+                  </div>
+                  <h3 className="text-white font-medium text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">
+                    The Complete Due Diligence Checklist
+                  </h3>
+                </div>
+              </div>
+            </Link>
 
-            {/* Hidden Cost Article */}
-            <div className="scroll-animate fade-up group cursor-pointer">
-              <Link href="/resources/insights/hidden-cost-almost-ready">
-                <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden">
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img 
-                      src="/Gemini_Generated_Image_f2debdf2debdf2de.png"
-                      alt="The hidden cost of almost ready article"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-1 rounded text-xs font-medium bg-cyan-500/20 text-cyan-300">
-                        Article
-                      </span>
-                    </div>
-                    <h3 className="text-white font-semibold mb-2 leading-tight group-hover:text-white/90 transition-colors duration-300 text-sm">
-                      The Hidden Cost of 'Almost Ready'
-                    </h3>
-                    <div className="text-xs text-gray-500">
-                      5 min read
-                    </div>
-                  </div>
+            {/* Article */}
+            <Link href="/resources/insights/hidden-cost-almost-ready" className="scroll-animate fade-up group block">
+              <div className="bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all duration-300 overflow-hidden">
+                <div className="aspect-[16/8] overflow-hidden">
+                  <img 
+                    src="/Gemini_Generated_Image_f2debdf2debdf2de.png"
+                    alt="The hidden cost of almost ready article"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              </Link>
-            </div>
+                <div className="p-2">
+                  <div className="flex items-center gap-1 mb-1">
+                    <span className="px-1.5 py-0.5 rounded text-xs font-medium bg-cyan-500/20 text-cyan-300">
+                      Article
+                    </span>
+                  </div>
+                  <h3 className="text-white font-medium text-xs leading-tight group-hover:text-white/90 transition-colors duration-300">
+                    The Hidden Cost of 'Almost Ready'
+                  </h3>
+                </div>
+              </div>
+            </Link>
           </div>
 
           {/* Mobile View All Button */}
