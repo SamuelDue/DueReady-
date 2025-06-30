@@ -277,6 +277,89 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Metrics Section */}
+      <section className="py-16 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-gradient-to-br from-gray-950/50 to-gray-900/30 relative">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Metric 1 - Speed to Investor Insights */}
+            <div className="scroll-animate fade-up group">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="text-3xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                    40%
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-white font-semibold mb-1">
+                      Faster speed to investor insights
+                    </div>
+                    <div className="text-gray-400 text-sm leading-relaxed">
+                      Organized data rooms, clean cap tables, and structured documents reduce friction during due diligence.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Metric 2 - User Retention */}
+            <div className="scroll-animate fade-up group">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="text-3xl font-bold text-green-400 group-hover:text-green-300 transition-colors duration-300">
+                    30%
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-white font-semibold mb-1">
+                      Increase in user retention post-funding
+                    </div>
+                    <div className="text-gray-400 text-sm leading-relaxed">
+                      Tighter ops and clear metrics allow for smarter product decisions and investor-backed growth plans.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Metric 3 - ROAS */}
+            <div className="scroll-animate fade-up group">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="text-3xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+                    45%
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-white font-semibold mb-1">
+                      Increase in return on ad spend (ROAS)
+                    </div>
+                    <div className="text-gray-400 text-sm leading-relaxed">
+                      With clean financial models and clearer reporting, startups make more data-driven marketing bets.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Metric 4 - Compliance Time */}
+            <div className="scroll-animate fade-up group">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="text-3xl font-bold text-orange-400 group-hover:text-orange-300 transition-colors duration-300">
+                    50%
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-white font-semibold mb-1">
+                      Less time lost to compliance and legal fire drills
+                    </div>
+                    <div className="text-gray-400 text-sm leading-relaxed">
+                      Proactive compliance and legal structuring prevents costly last-minute scrambles.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What We Do Section */}
       <section id="what-we-do" className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-6xl mx-auto">
