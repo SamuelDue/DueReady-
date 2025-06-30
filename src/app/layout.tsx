@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({
@@ -10,6 +10,12 @@ const geist = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -42,7 +48,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon Meta Tags */}
+        {/* Data URI Favicon - Immediate, no caching */}
+        <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+CiAgPHJlY3Qgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJyBmaWxsPScjMDAwJy8+CiAgPHRleHQgeD0nMTYnIHk9JzIyJyBmb250LWZhbWlseT0nQXJpYWwnIGZvbnQtc2l6ZT0nMTQnIGZvbnQtd2VpZ2h0PSdib2xkJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmaWxsPScjZmZmJz5EUjwvdGV4dD4KICA8L3N2Zz4K" type="image/svg+xml" />
+        
+        {/* Comprehensive Favicon Meta Tags with cache busting */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=5" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=5" />
         <link rel="apple-touch-icon" href="/favicon.svg?v=5" />
@@ -79,11 +88,41 @@ export default function RootLayout({
                 -webkit-overflow-scrolling: touch;
                 overflow-x: hidden;
               }
+              
+              /* Disable complex animations on mobile for smooth scrolling */
+              .scroll-animate {
+                animation: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+              }
+              
+              /* Simplify scrolling words animation on mobile */
+              .scrolling-words-text {
+                animation-duration: 1.5s !important;
+                animation-timing-function: ease-out !important;
+              }
+              
+              /* Hardware acceleration for smooth scrolling */
+              .scrolling-words-container {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+              }
+              
+              /* Reduce animation complexity on mobile */
+              @media (prefers-reduced-motion: reduce) {
+                * {
+                  animation-duration: 0.01ms !important;
+                  animation-iteration-count: 1 !important;
+                  transition-duration: 0.01ms !important;
+                }
+              }
             }
           `
         }} />
       </head>
-      <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}>
         {children}
       </body>
     </html>
