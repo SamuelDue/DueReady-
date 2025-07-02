@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+      <html lang="en">
       <head>
         {/* Data URI Favicon - Immediate, no caching */}
         <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+CiAgPHJlY3Qgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJyBmaWxsPScjMDAwJy8+CiAgPHRleHQgeD0nMTYnIHk9JzIyJyBmb250LWZhbWlseT0nQXJpYWwnIGZvbnQtc2l6ZT0nMTQnIGZvbnQtd2VpZ2h0PSdib2xkJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmaWxsPScjZmZmJz5EUjwvdGV4dD4KICA8L3N2Zz4K" type="image/svg+xml" />
@@ -67,6 +67,9 @@ export default function RootLayout({
         {/* Performance Optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Load Space Grotesk directly for SVG compatibility */}
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         
         {/* Mobile-specific CSS */}
         <style dangerouslySetInnerHTML={{
@@ -123,8 +126,8 @@ export default function RootLayout({
         }} />
       </head>
       <body className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
+          {children}
+        </body>
+      </html>
   );
 }

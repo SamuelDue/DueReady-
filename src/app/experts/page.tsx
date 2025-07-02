@@ -258,66 +258,79 @@ export default function ExpertsPage() {
         </div>
       </section>
 
-      {/* Expert Modal */}
+      {/* Expert Modal - Fixed for mobile */}
       {selectedExpert && (
         <div 
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 p-4 overflow-y-auto"
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setSelectedExpert(null)
             }
           }}
         >
-          <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-white/20 rounded-md max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            {(() => {
-              const expert = experts.find(e => e.id === selectedExpert)
-              if (!expert) return null
-              
-              return (
-                <div className="relative">
-                  {/* Close button */}
-                  <button
-                    onClick={() => setSelectedExpert(null)}
-                    className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300 p-2"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
+          {/* Modal container with mobile-first approach */}
+          <div className="min-h-full flex items-start justify-center py-8 md:py-12 md:items-center">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-white/20 rounded-md max-w-2xl w-full relative">
+              {(() => {
+                const expert = experts.find(e => e.id === selectedExpert)
+                if (!expert) return null
+                
+                return (
+                  <>
+                    {/* Close button */}
+                    <button
+                      onClick={() => setSelectedExpert(null)}
+                      className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300 p-2 z-10"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
 
-                  {/* Modal content */}
-                  <div className="p-8">
-                    <div className="flex items-start gap-6 mb-6">
-                      <div className="bg-gradient-to-br from-white/15 to-white/25 w-32 h-32 rounded-md flex items-center justify-center border border-white/30 flex-shrink-0">
-                        <span className="text-white/60 text-sm font-medium">Photo</span>
+                    {/* Modal content */}
+                    <div className="p-6 sm:p-8">
+                      <div className="flex flex-col sm:flex-row items-start gap-6 mb-6">
+                        <div className="bg-gradient-to-br from-white/15 to-white/25 w-24 h-24 sm:w-32 sm:h-32 rounded-md flex items-center justify-center border border-white/30 flex-shrink-0 mx-auto sm:mx-0">
+                          <span className="text-white/60 text-sm font-medium">Photo</span>
+                        </div>
+                        
+                        <div className="flex-1 text-center sm:text-left">
+                          <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">{expert.name}</h2>
+                          <p className="text-base sm:text-lg text-gray-300 mb-4">{expert.role}</p>
+                        </div>
                       </div>
-                      
-                      <div className="flex-1">
-                        <h2 className="text-2xl font-bold text-white mb-2">{expert.name}</h2>
-                        <p className="text-lg text-gray-300 mb-4">{expert.role}</p>
+
+                      {/* Full biography */}
+                      <div className="mb-6">
+                        <h3 className="text-lg font-semibold text-white mb-3">About</h3>
+                        <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{expert.fullBio}</p>
+                      </div>
+
+                      {/* Specialties */}
+                      <div className="mb-6">
+                        <h3 className="text-lg font-semibold text-white mb-3">Core Specialties</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {expert.specialties.map((specialty, index) => (
+                            <div key={index} className="flex items-center gap-2">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                              <span className="text-gray-300 text-sm">{specialty}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Mobile-friendly close button at bottom */}
+                      <div className="block sm:hidden pt-4 border-t border-white/10">
+                        <button
+                          onClick={() => setSelectedExpert(null)}
+                          className="w-full py-3 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-all duration-300 text-center rounded-md"
+                        >
+                          Close
+                        </button>
                       </div>
                     </div>
-
-                    {/* Full biography */}
-                    <div className="mb-6">
-                      <h3 className="text-lg font-semibold text-white mb-3">About</h3>
-                      <p className="text-gray-300 leading-relaxed">{expert.fullBio}</p>
-                    </div>
-
-                    {/* Specialties */}
-                    <div className="mb-6">
-                      <h3 className="text-lg font-semibold text-white mb-3">Core Specialties</h3>
-                      <div className="grid grid-cols-2 gap-2">
-                        {expert.specialties.map((specialty, index) => (
-                          <div key={index} className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                            <span className="text-gray-300 text-sm">{specialty}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )
-            })()}
+                  </>
+                )
+              })()}
+            </div>
           </div>
         </div>
       )}
