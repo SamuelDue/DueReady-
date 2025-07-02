@@ -89,10 +89,17 @@ export async function POST(request: NextRequest) {
         console.log('Email sent successfully via Resend')
       } catch (emailError) {
         console.error('Email sending failed:', emailError)
-        // Don't fail the request if email fails, just log it
+        return NextResponse.json(
+          { error: 'Failed to send email. Please try emailing hello@dueready.com directly.' },
+          { status: 500 }
+        )
       }
     } else {
       console.log('Note: RESEND_API_KEY not configured, email not sent')
+      return NextResponse.json(
+        { error: 'Email service not configured. Please email hello@dueready.com directly.' },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json(
