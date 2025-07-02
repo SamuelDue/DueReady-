@@ -15,6 +15,9 @@ export default function ContactPage() {
     message: '',
     consent: false
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   useEffect(() => {
@@ -63,10 +66,19 @@ export default function ContactPage() {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }))
+    
+    // Clear any previous status when user starts typing
+    if (submitStatus !== 'idle') {
+      setSubmitStatus('idle')
+      setSubmitMessage('')
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setSubmitMessage('')
     
     try {
       const response = await fetch('/api/contact', {
@@ -77,8 +89,12 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
-        alert('Message sent successfully! We\'ll get back to you within 24 hours.')
+        setSubmitStatus('success')
+        setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.')
+        // Clear form
         setFormData({
           name: '',
           email: '',
@@ -88,11 +104,14 @@ export default function ContactPage() {
           consent: false
         })
       } else {
-        throw new Error('Failed to send message')
+        throw new Error(data.error || 'Failed to send message')
       }
     } catch (error) {
       console.error('Error sending message:', error)
-      alert('Sorry, there was an error sending your message. Please try emailing us directly at hello@dueready.com')
+      setSubmitStatus('error')
+      setSubmitMessage('Sorry, there was an error sending your message. Please try emailing us directly at hello@dueready.com')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -276,9 +295,10 @@ export default function ContactPage() {
 
             {/* Right Side - Contact Form */}
             <div className="scroll-animate fade-right">
-              <div className="bg-white/5 border border-white/10 rounded-md p-8">
-                <h3 className="text-xl font-bold text-white mb-6">Tell Us About Your Startup</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                              <div className="bg-white/5 border border-white/10 rounded-md p-8">
+                  <h3 className="text-xl font-bold text-white mb-6">Tell Us About Your Startup</h3>
+                 
+                  <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
                   Name *
@@ -290,7 +310,8 @@ export default function ContactPage() {
                   required
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Your full name"
                 />
               </div>
@@ -306,7 +327,8 @@ export default function ContactPage() {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="your@email.com"
                 />
               </div>
@@ -322,7 +344,8 @@ export default function ContactPage() {
                   required
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Your company name"
                 />
               </div>
@@ -336,7 +359,8 @@ export default function ContactPage() {
                   name="stage"
                   value={formData.stage}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <option value="" className="bg-gray-900">Select your stage</option>
                   <option value="pre-seed" className="bg-gray-900">Pre-seed</option>
@@ -359,7 +383,8 @@ export default function ContactPage() {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 resize-none"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Tell us about your current situation, timeline, and specific goals..."
                 />
               </div>
@@ -373,20 +398,47 @@ export default function ContactPage() {
                   required
                   checked={formData.consent}
                   onChange={handleInputChange}
-                  className="mt-1 w-4 h-4 text-white bg-white/10 border border-white/30 rounded focus:ring-white/40 focus:ring-2 accent-white"
+                  disabled={isSubmitting}
+                  className="mt-1 w-4 h-4 text-white bg-white/10 border border-white/30 rounded focus:ring-white/40 focus:ring-2 accent-white disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <label htmlFor="consent" className="text-sm text-gray-300 leading-relaxed">
                   I consent to DueReady processing my personal data (name, email, company, stage, and message) to respond to my inquiry and provide information about services. I understand I can withdraw consent at any time by emailing <a href="mailto:hello@dueready.com" className="text-white hover:text-blue-400 transition-colors">hello@dueready.com</a>. For full details, see our <Link href="/privacy" className="text-white hover:text-blue-400 transition-colors">Privacy Policy</Link>. *
                 </label>
               </div>
 
+              {/* Success/Error Message */}
+              {submitStatus !== 'idle' && (
+                <div className={`p-4 rounded-md border ${
+                  submitStatus === 'success' 
+                    ? 'bg-green-500/10 border-green-500/30 text-green-400' 
+                    : 'bg-red-500/10 border-red-500/30 text-red-400'
+                }`}>
+                  <div className="flex items-center gap-3">
+                    <div className={`w-6 h-6 flex-shrink-0 ${
+                      submitStatus === 'success' ? 'text-green-400' : 'text-red-400'
+                    }`}>
+                      {submitStatus === 'success' ? (
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      )}
+                    </div>
+                    <p className="text-sm font-medium">{submitMessage}</p>
+                  </div>
+                </div>
+              )}
+
               <div className="space-y-3 pt-2">
                 <Button 
                   type="submit"
-                  disabled={!formData.consent}
+                  disabled={!formData.consent || isSubmitting}
                   className="w-full bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-4 sm:px-6 py-1 sm:py-2 h-auto font-medium text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white"
                 >
-                  Send Message →
+                  {isSubmitting ? 'Sending...' : 'Send Message →'}
                 </Button>
                 
                 <Button 
@@ -405,6 +457,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Rest of the component remains the same... */}
       {/* FAQ Section */}
       <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 relative">
         <div className="max-w-4xl mx-auto">
@@ -487,4 +540,4 @@ export default function ContactPage() {
       <Footer />
     </div>
   )
-} 
+}
