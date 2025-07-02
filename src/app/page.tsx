@@ -207,7 +207,7 @@ export default function Home() {
       <section className="flex items-center min-h-screen pt-20 relative z-10">
         <div className="max-w-7xl mx-auto px-12 sm:px-10 lg:px-12 w-full">
           <div className="max-w-4xl scroll-animate fade-up">
-            <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight animate-blur-in font-[family-name:var(--font-space-grotesk)] leading-tight" style={{ overflow: 'visible' }}>
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8 tracking-tight animate-blur-in font-[family-name:var(--font-space-grotesk)] leading-tight hero-glow" style={{ overflow: 'visible' }}>
               <span className="block">The fastest way to</span>
               <span className="inline">become <ScrollingWords /></span>
           </h1>

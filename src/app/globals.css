@@ -13,83 +13,64 @@ html {
     overflow-x: hidden;
   }
   
-  /* Simplified mobile animations for performance */
-  .floating-glow-1,
-  .floating-glow-2,
-  .floating-glow-3,
-  .floating-glow-4 {
-    display: none; /* Hide decorative animations on mobile to save battery */
+  /* Improved mobile button centering - fix text positioning */
+  button, .button, [role="button"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.2 !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    min-height: 44px !important;
+  }
+  
+  /* Better mobile scroll performance */
+  * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Disable complex animations on mobile for better performance */
+  .floating-glow-1, .floating-glow-2, .floating-glow-3, .floating-glow-4 {
+    display: none !important; /* Hide decorative animations on mobile to save battery */
     animation: none !important;
     transform: none !important;
   }
   
-  /* Optimized scroll animations for mobile performance */
+  /* Simplified scroll animations for mobile performance */
   .scroll-animate {
-    transition-duration: 0.4s !important;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
+    will-change: opacity, transform;
   }
   
   .fade-up {
-    transform: translateY(20px) !important;
+    transform: translateY(15px) !important;
   }
   
   .fade-left {
-    transform: translateX(-20px) !important;
+    transform: translateX(-15px) !important;
   }
   
   .fade-right {
-    transform: translateX(20px) !important;
+    transform: translateX(15px) !important;
   }
   
   .stagger-children > * {
-    transform: translateY(10px) !important;
-    transition-duration: 0.4s !important;
+    transform: translateY(8px) !important;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
   }
   
-  /* Improve touch targets and reduce button height on mobile */
-  button, a, [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-    touch-action: manipulation;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  /* Better spacing for mobile */
-  .mobile-padding {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  /* Prevent zoom on input focus */
-  input, select, textarea {
-    font-size: 16px;
-  }
-  
-  /* Optimize text for mobile reading */
-  h1, h2, h3, h4, h5, h6 {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  /* Improve tap target spacing */
-  .mobile-menu a {
-    padding: 12px 16px;
-    display: block;
-  }
-  
-  /* Optimize animations for mobile performance */
-  * {
-    -webkit-tap-highlight-color: transparent;
+  /* Improve touch targets and reduce repaints */
+  .group:hover * {
+    transition-duration: 0.2s !important;
   }
   
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    * {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
     }
   }
   
@@ -351,6 +332,14 @@ html {
     animation: blur-in 1.5s ease-out 1s forwards;
     opacity: 0;
   }
+
+  /* Hero text glow effect */
+  .hero-glow {
+    text-shadow: 
+      0 0 8px rgba(255, 255, 255, 0.15),
+      0 0 16px rgba(255, 255, 255, 0.1),
+      0 0 24px rgba(255, 255, 255, 0.05);
+  }
 }
 
 /* MOBILE SCROLLING PERFORMANCE FIXES */
@@ -419,3 +408,120 @@ html {
     animation: none !important;
   }
 }
+
+/* Print styles for core readiness scope page */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Page setup with counter */
+  @page {
+    margin: 0.75in 0.75in 1in 0.75in;
+    size: A4;
+    counter-increment: page;
+    @bottom-center {
+      content: counter(page);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 10pt;
+      color: #9ca3af;
+    }
+  }
+  
+  /* Reset page counter */
+  body {
+    counter-reset: page;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+  
+  /* Preserve gradients and dark backgrounds for print */
+  .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #000000, #111827, #1f2937) !important;
+  }
+  
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+  }
+  
+  /* Ensure gradient text works in print */
+  .bg-clip-text {
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+  
+  /* Preserve all colors for print */
+  .text-white { color: #ffffff !important; }
+  .text-gray-300 { color: #d1d5db !important; }
+  .text-gray-400 { color: #9ca3af !important; }
+  .text-gray-500 { color: #6b7280 !important; }
+  .text-blue-200 { color: #bfdbfe !important; }
+  .text-blue-400 { color: #60a5fa !important; }
+  .text-green-400 { color: #4ade80 !important; }
+  .text-purple-400 { color: #c084fc !important; }
+  .text-orange-400 { color: #fb923c !important; }
+  
+  /* Preserve border colors */
+  .border-blue-400 { border-color: #60a5fa !important; }
+  .border-blue-600 { border-color: #2563eb !important; }
+  .border-gray-600 { border-color: #4b5563 !important; }
+  
+  /* Preserve background colors */
+  .bg-blue-500 { background-color: #3b82f6 !important; }
+  .bg-blue-600 { background-color: #2563eb !important; }
+  .bg-blue-400 { background-color: #60a5fa !important; }
+  .bg-green-600 { background-color: #16a34a !important; }
+  .bg-purple-600 { background-color: #9333ea !important; }
+  .bg-orange-600 { background-color: #ea580c !important; }
+  
+  /* Remove shadows but keep other effects */
+  * { text-shadow: none !important; }
+  
+  /* Keep box shadows for depth */
+  .shadow, .shadow-sm, .shadow-lg {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  }
+  
+  /* Page breaks */
+  .print\\:page-break-after-always { page-break-after: always !important; }
+  .print\\:page-break-after-avoid { page-break-after: avoid !important; }
+  .print\\:h-screen { height: 100vh !important; }
+  
+  /* Typography for print */
+  h1 { 
+    font-size: 36pt !important; 
+    page-break-after: avoid !important;
+    margin-bottom: 24pt !important;
+  }
+  h2 { 
+    font-size: 24pt !important; 
+    page-break-after: avoid !important;
+    margin-bottom: 18pt !important;
+  }
+  h3 { 
+    font-size: 18pt !important; 
+    page-break-after: avoid !important;
+    margin-bottom: 12pt !important;
+  }
+  h4 { 
+    font-size: 14pt !important; 
+    page-break-after: avoid !important;
+    margin-bottom: 8pt !important;
+  }
+  
+  /* Hide decorative elements */
+  .print\\:hidden { display: none !important; }
+  
+  /* Ensure animations are disabled for print */
+  *, *::before, *::after {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+

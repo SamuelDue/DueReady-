@@ -36,7 +36,7 @@ export default function Privacy() {
                 Our registered address is 3rd Floor, 86-90, Paul Street, London, England, United Kingdom, EC2A 4NE.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                We are in the process of registering with the Information Commissioner's Office (ICO) and will update this policy with our registration number once obtained.
+                We are registered with the Information Commissioner's Office (ICO) under registration number ZB924306.
               </p>
             </section>
             
@@ -259,12 +259,6 @@ export default function Privacy() {
                 <p className="text-gray-300"><strong>Postal Address:</strong> 3rd Floor, 86-90, Paul Street, London, England, United Kingdom, EC2A 4NE</p>
               </div>
             </section>
-            
-            <div className="mt-12 p-6 bg-gray-800/30 border border-gray-700 rounded-md">
-              <p className="text-gray-400 text-sm">
-                <strong>Note:</strong> This privacy policy includes placeholder text for ICO registration number that should be updated with actual information before publication.
-              </p>
-            </div>
           </div>
         </div>
       </section>
