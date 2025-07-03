@@ -7,10 +7,6 @@ const nextConfig: NextConfig = {
   },
   /* config options here */
   
-  // Temporarily disable ESLint during build due to configuration issues
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   
   // Enable image optimization (works perfectly on Vercel)
   images: {
