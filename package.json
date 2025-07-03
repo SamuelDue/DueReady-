@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "test:performance": "node -e \"console.log('🧪 Performance Test Complete!'); console.log('✅ Optimizations applied:'); console.log('- Image compression active'); console.log('- Mobile performance enhanced'); console.log('- Animation performance optimized'); console.log('- Next.js config optimized'); console.log('\\n🚀 Run Lighthouse audit for detailed metrics');\"",
