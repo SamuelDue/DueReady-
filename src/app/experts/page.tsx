@@ -5,9 +5,35 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { X, Plus } from 'lucide-react'
 
 export default function ExpertsPage() {
+  const router = useRouter()
+  const [selectedExpert, setSelectedExpert] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Mobile detection hook
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Handle expert click - navigate on mobile, modal on desktop
+  const handleExpertClick = (expertId: number) => {
+    if (isMobile) {
+      router.push(`/experts/${expertId}`)
+    } else {
+      setSelectedExpert(expertId)
+    }
+  }
+
   useEffect(() => {
     // Update page metadata for better SEO
     document.title = "Meet Our Deal Readiness Experts | Legal, Finance & Compliance Specialists"
@@ -16,8 +42,6 @@ export default function ExpertsPage() {
       metaDescription.setAttribute('content', 'Work with vetted legal, financial, and compliance experts. Fractional CFOs, legal advisors, and tech specialists — all with proven startup diligence experience.')
     }
   }, [])
-
-  const [selectedExpert, setSelectedExpert] = useState<number | null>(null)
 
   const experts = [
     {
@@ -93,15 +117,6 @@ export default function ExpertsPage() {
       document.body.style.overflow = 'unset'
     }
   }, [selectedExpert])
-
-  useEffect(() => {
-    // Update page metadata for better SEO
-    document.title = "Meet Our Deal Readiness Experts | Legal, Finance & Compliance Specialists"
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Work with vetted legal, financial, and compliance experts. Fractional CFOs, legal advisors, and tech specialists — all with proven startup diligence experience.')
-    }
-  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-gray-900 text-white relative overflow-x-hidden">
@@ -185,7 +200,7 @@ export default function ExpertsPage() {
 
                 {/* Plus button positioned over the card */}
                 <button
-                  onClick={() => setSelectedExpert(expert.id)}
+                  onClick={() => handleExpertClick(expert.id)}
                   className="absolute -bottom-3 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white/30 hover:scale-110 transition-all duration-300 group-hover:rotate-90"
                 >
                   <Plus className="w-5 h-5 text-white" />

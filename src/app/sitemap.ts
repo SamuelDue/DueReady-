@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://dueready.com',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'monthly',
       priority: 1,
     },
     {
@@ -21,13 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://dueready.com/who-we-help',
+      url: 'https://dueready.com/experts/1',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
-      url: 'https://dueready.com/services/compliance-risk-audit',
+      url: 'https://dueready.com/who-we-help',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -36,25 +36,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://dueready.com/services/financial-due-diligence-prep',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: 'https://dueready.com/services/legal-corporate-readiness',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: 'https://dueready.com/services/tech-data-room-optimization',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
+    },
+    {
+      url: 'https://dueready.com/services/compliance-risk-audit',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: 'https://dueready.com/resources/readiness-assessment',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.6,
+    },
+    {
+      url: 'https://dueready.com/resources/templates/due-diligence-checklist',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
     {
       url: 'https://dueready.com/resources/case-studies/chaos-to-closed',
@@ -67,24 +79,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
-    },
-    {
-      url: 'https://dueready.com/resources/templates/due-diligence-checklist',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://dueready.com/partners',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://dueready.com/join-us',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
     },
     {
       url: 'https://dueready.com/privacy',
