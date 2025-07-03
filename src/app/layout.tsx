@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   creator: "DueReady",
   publisher: "DueReady",
   metadataBase: new URL("https://dueready.com"),
+  alternates: {
+    canonical: "https://dueready.com",
+  },
   openGraph: {
     title: "DueReady - Deal Readiness & Due Diligence for Startups",
     description: "Prepare your startup for fundraising, acquisition, or compliance. Expert-led due diligence — clear scope, investor-ready.",

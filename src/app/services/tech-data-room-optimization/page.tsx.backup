@@ -12,7 +12,7 @@ export default function TechDataRoomOptimizationPage() {
     document.title = "Tech Data Room Optimization | Investor-Ready Documentation & Due Diligence"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Organize and optimize your startup's data room for investors. Expert document preparation, technical due diligence, and investor presentation optimization.')
+      metaDescription.setAttribute('content', 'Data room that impresses investors — organized documents, technical due diligence complete, presentation-ready. No scrambling.')
     }
   }, [])
 

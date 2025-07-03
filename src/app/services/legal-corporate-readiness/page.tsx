@@ -242,6 +242,67 @@ export default function LegalCorporateReadinessPage() {
       <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animate fade-up">
+      {/* Related Services Section */}
+      <section className="py-20 px-12 sm:px-10 lg:px-12 border-t border-white/10 bg-white/5 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 scroll-animate fade-up">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              Complete Your Deal Readiness
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Legal readiness is just one piece. Ensure your entire startup is investor-ready with our complementary services.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-animate fade-up stagger-children">
+            <Link href="/services/financial-due-diligence-prep" className="group block bg-white/5 border border-white/10 rounded-md p-6 hover:bg-white/10 transition-all duration-300">
+              <div className="w-12 h-12 mb-4 text-blue-400 transition-colors group-hover:text-blue-300">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7,13C7.55,13 8,13.45 8,14S7.55,15 7,15 6,14.55 6,14 6.45,13 7,13M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6L14.39,10.42L19,11L15.5,14.39L16.42,19L12,16.61L7.58,19L8.5,14.39L5,11L9.61,10.42L12,6Z"/>
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">Financial Due Diligence</h3>
+              <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
+                Clean financial models and credible forecasts to complement your legal foundation.
+              </p>
+              <div className="mt-4 text-blue-400 text-sm font-medium group-hover:text-blue-300 transition-colors">
+                Learn more →
+              </div>
+            </Link>
+
+            <Link href="/services/compliance-risk-audit" className="group block bg-white/5 border border-white/10 rounded-md p-6 hover:bg-white/10 transition-all duration-300">
+              <div className="w-12 h-12 mb-4 text-red-400 transition-colors group-hover:text-red-300">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M15.5,8A1.5,1.5 0 0,1 14,9.5A1.5,1.5 0 0,1 12.5,8A1.5,1.5 0 0,1 14,6.5A1.5,1.5 0 0,1 15.5,8M10,8A1.5,1.5 0 0,1 8.5,9.5A1.5,1.5 0 0,1 7,8A1.5,1.5 0 0,1 8.5,6.5A1.5,1.5 0 0,1 10,8M17,16H7V14.5C7,13.1 9.1,12 12,12C14.9,12 17,13.1 17,14.5V16Z"/>
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-red-300 transition-colors">Compliance Risk Audit</h3>
+              <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
+                Identify and resolve potential deal-blockers across all operational areas.
+              </p>
+              <div className="mt-4 text-red-400 text-sm font-medium group-hover:text-red-300 transition-colors">
+                Learn more →
+              </div>
+            </Link>
+
+            <Link href="/services/tech-data-room-optimization" className="group block bg-white/5 border border-white/10 rounded-md p-6 hover:bg-white/10 transition-all duration-300">
+              <div className="w-12 h-12 mb-4 text-purple-400 transition-colors group-hover:text-purple-300">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"/>
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">Data Room Optimization</h3>
+              <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
+                Organize your documents and technical assets for seamless investor review.
+              </p>
+              <div className="mt-4 text-purple-400 text-sm font-medium group-hover:text-purple-300 transition-colors">
+                Learn more →
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Ready to Bulletproof Your Legal Foundation?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
               Get your corporate structure and contracts deal-ready with our expert legal review and optimization process.

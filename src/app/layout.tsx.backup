@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dueready.com"),
   openGraph: {
     title: "DueReady - Deal Readiness & Due Diligence for Startups",
-    description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits. Expert services with 4-8 week timeline.",
+    description: "Prepare your startup for fundraising, acquisition, or compliance. Expert-led due diligence — clear scope, investor-ready.",
     url: "https://dueready.com",
     siteName: "DueReady",
     type: "website",
