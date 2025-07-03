@@ -8,6 +8,15 @@ import { useEffect } from 'react'
 
 export default function TechDataRoomOptimizationPage() {
   useEffect(() => {
+    // Update page metadata for better SEO
+    document.title = "Tech Data Room Optimization | Investor-Ready Documentation & Due Diligence"
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Organize and optimize your startup's data room for investors. Expert document preparation, technical due diligence, and investor presentation optimization.')
+    }
+  }, [])
+
+  useEffect(() => {
     // Scroll animations
     const observerOptions = {
       threshold: 0.1,

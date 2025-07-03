@@ -13,7 +13,7 @@ export default function ExpertsPage() {
     document.title = "Meet Our Deal Readiness Experts | Legal, Financial & Tech Due Diligence Team"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Meet our vetted specialists: fractional CFOs, legal experts, and compliance professionals who help startups become deal-ready for fundraising and acquisitions.')
+      metaDescription.setAttribute('content', 'Vetted specialists ready to work — fractional CFOs, legal experts, compliance professionals. Proven experience making startups deal-ready.')
     }
   }, [])
 
@@ -99,7 +99,7 @@ export default function ExpertsPage() {
     document.title = "Meet Our Deal Readiness Experts | Legal, Financial & Tech Due Diligence Team"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Meet our vetted specialists: fractional CFOs, legal experts, and compliance professionals who help startups become deal-ready for fundraising and acquisitions.')
+      metaDescription.setAttribute('content', 'Vetted specialists ready to work — fractional CFOs, legal experts, compliance professionals. Proven experience making startups deal-ready.')
     }
   }, [])
 

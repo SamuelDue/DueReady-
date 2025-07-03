@@ -12,7 +12,7 @@ export default function WhoWeHelpPage() {
     document.title = "Who We Help | Startup Due Diligence for B2B SaaS, Fintech & Healthtech"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'We help B2B SaaS, fintech, healthtech startups prepare for funding rounds, acquisitions, and enterprise sales. Specialized deal readiness for high-growth tech companies.')
+      metaDescription.setAttribute('content', 'B2B SaaS, fintech, healthtech specialists — funding rounds, acquisitions, enterprise sales readiness. High-growth tech expertise.')
     }
   }, [])
 

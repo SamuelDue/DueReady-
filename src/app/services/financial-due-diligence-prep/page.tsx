@@ -12,7 +12,7 @@ export default function FinancialDueDiligencePrepPage() {
     document.title = "Financial Due Diligence Prep | Fractional CFO & Investor-Ready Financials"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Build investor-grade financial models, clean accounting, and credible forecasts. Fractional CFO services for startups preparing for funding rounds.')
+      metaDescription.setAttribute('content', 'Investor-grade financials that close deals — clean models, credible forecasts, fractional CFO guidance. Funding-ready numbers.')
     }
   }, [])
 

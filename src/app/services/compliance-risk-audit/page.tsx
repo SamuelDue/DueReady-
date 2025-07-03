@@ -12,7 +12,7 @@ export default function ComplianceRiskAuditPage() {
     document.title = "Compliance Risk Audit | Deal Readiness Assessment & Red Flag Detection"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Identify deal-blocking issues before investors do. Comprehensive compliance risk audit covering legal, financial, and operational red flags for startups.')
+      metaDescription.setAttribute('content', 'Find and fix deal-blockers before investors do — comprehensive risk audit across legal, financial, operational areas. Clean slate guaranteed.')
     }
   }, [])
 

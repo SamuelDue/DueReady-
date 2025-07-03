@@ -21,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "DueReady - Deal Readiness & Due Diligence for Startups | Fundraising Prep",
-  description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits. Expert legal, financial & technical due diligence services. Free consultation - 4-8 week timeline.",
+  description: "Prepare your startup for fundraising, acquisition, or compliance. Legal, financial & technical due diligence — expert-led, clear scope, investor-ready.",
   keywords: "deal readiness, due diligence, startup fundraising, compliance audit, data room prep, legal readiness, fractional CFO, startup consulting",
   authors: [{ name: "DueReady" }],
   creator: "DueReady",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dueready.com"),
   openGraph: {
     title: "DueReady - Deal Readiness & Due Diligence for Startups",
-    description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits. Expert services with 4-8 week timeline.",
+    description: "Prepare your startup for fundraising, acquisition, or compliance. Expert-led due diligence — clear scope, investor-ready.",
     url: "https://dueready.com",
     siteName: "DueReady",
     type: "website",

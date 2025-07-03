@@ -12,7 +12,7 @@ export default function LegalCorporateReadinessPage() {
     document.title = "Legal & Corporate Readiness | IP Protection, Contracts & Compliance Audit"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Expert legal structuring for startups: IP protection, employment terms, data compliance (GDPR, SOC 2), contract reviews. Prepare for investor due diligence.')
+      metaDescription.setAttribute('content', 'Legal structure that protects and scales — IP protection, employment terms, data compliance. GDPR, SOC 2 ready.')
     }
   }, [])
 
