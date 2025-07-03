@@ -10,10 +10,10 @@ import { X, Plus } from 'lucide-react'
 export default function ExpertsPage() {
   useEffect(() => {
     // Update page metadata for better SEO
-    document.title = "Meet Our Deal Readiness Experts | Legal, Financial & Tech Due Diligence Team"
+    document.title = "Meet Our Deal Readiness Experts | Legal, Finance & Compliance Specialists"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Vetted specialists ready to work — fractional CFOs, legal experts, compliance professionals. Proven experience making startups deal-ready.')
+      metaDescription.setAttribute('content', 'Work with vetted legal, financial, and compliance experts. Fractional CFOs, legal advisors, and tech specialists — all with proven startup diligence experience.')
     }
   }, [])
 
@@ -96,10 +96,10 @@ export default function ExpertsPage() {
 
   useEffect(() => {
     // Update page metadata for better SEO
-    document.title = "Meet Our Deal Readiness Experts | Legal, Financial & Tech Due Diligence Team"
+    document.title = "Meet Our Deal Readiness Experts | Legal, Finance & Compliance Specialists"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Vetted specialists ready to work — fractional CFOs, legal experts, compliance professionals. Proven experience making startups deal-ready.')
+      metaDescription.setAttribute('content', 'Work with vetted legal, financial, and compliance experts. Fractional CFOs, legal advisors, and tech specialists — all with proven startup diligence experience.')
     }
   }, [])
 

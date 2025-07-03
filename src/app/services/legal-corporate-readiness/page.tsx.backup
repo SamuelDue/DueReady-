@@ -9,10 +9,10 @@ import { useEffect } from 'react'
 export default function LegalCorporateReadinessPage() {
   useEffect(() => {
     // Update page metadata for better SEO
-    document.title = "Legal & Corporate Readiness | IP Protection, Contracts & Compliance Audit"
+    document.title = "Legal & Corporate Readiness for Startups | IP, Contracts, Compliance"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Expert legal structuring for startups: IP protection, employment terms, data compliance (GDPR, SOC 2), contract reviews. Prepare for investor due diligence.')
+      metaDescription.setAttribute('content', 'Legal structure that protects and scales — IP protection, employment terms, data compliance. GDPR, SOC 2 ready.')
     }
   }, [])
 

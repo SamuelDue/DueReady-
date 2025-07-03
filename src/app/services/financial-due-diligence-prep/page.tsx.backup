@@ -9,10 +9,10 @@ import { useEffect } from 'react'
 export default function FinancialDueDiligencePrepPage() {
   useEffect(() => {
     // Update page metadata for better SEO
-    document.title = "Financial Due Diligence Prep | Fractional CFO & Investor-Ready Financials"
+    document.title = "Financial Due Diligence for Startups | Fractional CFO & Investor-Ready Models"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Build investor-grade financial models, clean accounting, and credible forecasts. Fractional CFO services for startups preparing for funding rounds.')
+      metaDescription.setAttribute('content', 'Investor-grade financials that close deals — clean models, credible forecasts, fractional CFO guidance. Funding-ready numbers.')
     }
   }, [])
 
