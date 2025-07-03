@@ -10,8 +10,8 @@ import type { Metadata } from 'next'
 // Note: This metadata will be added to the page component once we convert it to server component
 // For now, we'll add it via head tags in useEffect
 export const contactMetadata: Metadata = {
-  title: "Contact DueReady - Free Deal Readiness Consultation | Startup Due Diligence",
-  description: "Connect with deal readiness experts — free consultation, 24hr response. Legal, financial & compliance specialists ready to prepare your startup.",
+  title: "Contact DueReady – Startup Deal Readiness & Due Diligence Experts",
+  description: "Connect with deal readiness specialists for a free consultation. Legal, financial & compliance experts ready to help prepare your startup for funding or acquisition.",
   keywords: "contact DueReady, free consultation, startup consultation, deal readiness consultation, due diligence consultation",
   openGraph: {
     title: "Contact DueReady - Free Deal Readiness Consultation",
@@ -36,10 +36,10 @@ export default function ContactPage() {
 
   useEffect(() => {
     // Update page metadata for better SEO
-    document.title = "Contact DueReady - Free Deal Readiness Consultation | Startup Due Diligence"
+    document.title = "Contact DueReady – Startup Deal Readiness & Due Diligence Experts"
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Connect with deal readiness experts — free consultation, 24hr response. Legal, financial & compliance specialists ready to prepare your startup.')
+      metaDescription.setAttribute('content', 'Connect with deal readiness specialists for a free consultation. Legal, financial & compliance experts ready to help prepare your startup for funding or acquisition.')
     }
 
     // Scroll animations
