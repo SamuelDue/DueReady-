@@ -193,7 +193,7 @@ export default function DashboardPage() {
   const formatLastUpdated = (dateString: string) => {
     const date = new Date(dateString)
     const now = new Date()
-    const diffMinutes = Math.floor((now - date) / (1000 * 60))
+    const diffMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60))
     
     if (diffMinutes < 60) return `${diffMinutes} min ago`
     if (diffMinutes < 1440) return `${Math.floor(diffMinutes / 60)} hours ago`
