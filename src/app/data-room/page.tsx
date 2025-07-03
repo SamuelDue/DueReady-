@@ -1864,7 +1864,7 @@ export default function DataRoomPage() {
   ]
 
   // Helper functions for access control
-  const canUserDownload = (user, folder = null) => {
+  const canUserDownload = (user: any, folder: any = null) => {
     if (user.userType === 'internal') return true
     if (!user.canDownload) return false
     if (user.accessExpiry && new Date(user.accessExpiry) < new Date()) return false
