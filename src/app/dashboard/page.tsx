@@ -214,7 +214,7 @@ export default function DashboardPage() {
 
   // Flatten all checklist items into a single array
   const getAllChecklistItems = () => {
-    const allItems = []
+    const allItems: any[] = []
     Object.entries(dueDiligenceByDomain).forEach(([domain, milestones]) => {
       Object.entries(milestones).forEach(([milestone, items]) => {
         items.forEach(item => {
