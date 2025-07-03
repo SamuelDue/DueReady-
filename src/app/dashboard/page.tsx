@@ -28,7 +28,7 @@ export default function DashboardPage() {
     HR: 74
   })
 
-  const [collapsedSections, setCollapsedSections] = useState({
+  const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
     'Legal-Raise': false,
     'Finance-Raise': false,
     'Technical-Raise': false,
