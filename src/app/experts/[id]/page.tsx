@@ -50,48 +50,29 @@ export default function ExpertPage({ params }: { params: { id: string } }) {
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/5 border border-white/10 rounded-md p-6 sm:p-8">
-            <div className="flex flex-col sm:flex-row items-start gap-6 mb-8">
-              <div className="bg-gradient-to-br from-white/15 to-white/25 w-32 h-32 sm:w-40 sm:h-40 rounded-md flex items-center justify-center border border-white/30 flex-shrink-0 mx-auto sm:mx-0">
+            <div className="flex flex-col items-center text-center gap-6 mb-8">
+              <div className="bg-gradient-to-br from-white/15 to-white/25 w-32 h-32 sm:w-40 sm:h-40 rounded-md flex items-center justify-center border border-white/30 flex-shrink-0">
                 <span className="text-white/60 text-sm font-medium">Photo</span>
               </div>
               
-              <div className="flex-1 text-center sm:text-left">
+              <div className="text-center">
                 <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2 font-[family-name:var(--font-space-grotesk)]">
                   {expert.name}
                 </h1>
                 <p className="text-xl sm:text-2xl text-gray-300 mb-4">{expert.role}</p>
-                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                  {expert.tags.map((tag, index) => (
-                    <span key={index} className="px-3 py-1 bg-white/10 text-white/80 rounded-full text-sm">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
 
             {/* Full biography */}
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-white mb-4">About</h2>
-              <p className="text-gray-300 leading-relaxed text-lg">{expert.fullBio}</p>
-            </div>
-
-            {/* Experience Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white/5 border border-white/10 rounded-md p-4">
-                <h3 className="text-lg font-semibold text-white mb-2">Experience</h3>
-                <p className="text-gray-300">{expert.experience}</p>
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded-md p-4">
-                <h3 className="text-lg font-semibold text-white mb-2">Companies Supported</h3>
-                <p className="text-gray-300">{expert.companies}</p>
-              </div>
+              <h2 className="text-2xl font-semibold text-white mb-4 text-center">About</h2>
+              <p className="text-gray-300 leading-relaxed text-lg text-center max-w-3xl mx-auto">{expert.fullBio}</p>
             </div>
 
             {/* Core Specialties */}
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-white mb-4">Core Specialties</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <h2 className="text-2xl font-semibold text-white mb-4 text-center">Core Specialties</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
                 {expert.specialties.map((specialty, index) => (
                   <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-md">
                     <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
@@ -107,12 +88,14 @@ export default function ExpertPage({ params }: { params: { id: string } }) {
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
                 Connect with {expert.name.split(' ')[0]} and our team to discuss how we can help make your startup deal-ready.
               </p>
-              <Button 
-                className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-6 py-3 h-auto font-medium text-base"
-                asChild
-              >
-                <Link href="/contact">Start a Conversation</Link>
-              </Button>
+              <div className="flex justify-center">
+                <Button 
+                  className="bg-white border border-white/30 text-black hover:bg-white/90 hover:text-black hover:border-white/40 transition-all duration-300 rounded-md px-6 py-3 h-auto font-medium text-base"
+                  asChild
+                >
+                  <Link href="/contact">Start a Conversation</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
