@@ -8,15 +8,6 @@ import { useEffect, useState } from 'react'
 import { X, Plus } from 'lucide-react'
 
 export default function ExpertsPage() {
-  useEffect(() => {
-    // Update page metadata for better SEO
-    document.title = "Meet Our Deal Readiness Experts | Legal, Financial & Tech Due Diligence Team"
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Meet our vetted specialists: fractional CFOs, legal experts, and compliance professionals who help startups become deal-ready for fundraising and acquisitions.')
-    }
-  }, [])
-
   const [selectedExpert, setSelectedExpert] = useState<number | null>(null)
 
   const experts = [

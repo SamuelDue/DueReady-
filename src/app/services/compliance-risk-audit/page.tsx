@@ -8,6 +8,15 @@ import { useEffect } from 'react'
 
 export default function ComplianceRiskAuditPage() {
   useEffect(() => {
+    // Update page metadata for better SEO
+    document.title = "Compliance Risk Audit | Deal Readiness Assessment & Red Flag Detection"
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Identify deal-blocking issues before investors do. Comprehensive compliance risk audit covering legal, financial, and operational red flags for startups.')
+    }
+  }, [])
+
+  useEffect(() => {
     // Scroll animations
     const observerOptions = {
       threshold: 0.1,

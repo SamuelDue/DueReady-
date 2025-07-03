@@ -1,12 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  
   // Temporarily disable ESLint during build due to configuration issues
   eslint: {
     ignoreDuringBuilds: true,
   },
+  /* config options here */
+  
   
   // Enable image optimization (works perfectly on Vercel)
   images: {

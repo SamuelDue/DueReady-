@@ -20,45 +20,15 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "DueReady - Deal Readiness & Due Diligence for Startups | Fundraising Prep",
-  description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits. Expert legal, financial & technical due diligence services. Free consultation - 4-8 week timeline.",
-  keywords: "deal readiness, due diligence, startup fundraising, compliance audit, data room prep, legal readiness, fractional CFO, startup consulting",
-  authors: [{ name: "DueReady" }],
-  creator: "DueReady",
-  publisher: "DueReady",
-  metadataBase: new URL("https://dueready.com"),
-  openGraph: {
-    title: "DueReady - Deal Readiness & Due Diligence for Startups",
-    description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits. Expert services with 4-8 week timeline.",
-    url: "https://dueready.com",
-    siteName: "DueReady",
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "DueReady - Deal Readiness & Due Diligence for Startups",
-    description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits.",
-    creator: "@dueready",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  title: "DueReady - Deal Readiness for Startups",
+  description: "Financial, legal, and compliance readiness for startups",
   icons: {
     icon: [
-      { url: "/favicon.svg?v=5", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=5", sizes: "32x32" }
+      { url: '/favicon.svg?v=5', type: 'image/svg+xml' },
+      { url: '/favicon.ico?v=5', sizes: '32x32' }
     ],
     apple: [
-      { url: "/favicon.svg?v=5", sizes: "180x180" }
+      { url: '/favicon.svg?v=5', sizes: '180x180' }
     ]
   },
 };

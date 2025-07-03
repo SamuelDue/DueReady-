@@ -5,6 +5,20 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import type { Metadata } from 'next'
+
+// Note: This metadata will be added to the page component once we convert it to server component
+// For now, we'll add it via head tags in useEffect
+export const contactMetadata: Metadata = {
+  title: "Contact DueReady - Free Deal Readiness Consultation | Startup Due Diligence",
+  description: "Schedule a free consultation to prepare your startup for investors, acquirers & auditors. 24hr response time. Expert legal, financial & compliance readiness services.",
+  keywords: "contact DueReady, free consultation, startup consultation, deal readiness consultation, due diligence consultation",
+  openGraph: {
+    title: "Contact DueReady - Free Deal Readiness Consultation",
+    description: "Schedule a free consultation to prepare your startup for investors, acquirers & auditors. 24hr response time.",
+    url: "https://dueready.com/contact",
+  },
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,6 +35,13 @@ export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   useEffect(() => {
+    // Update page metadata for better SEO
+    document.title = "Contact DueReady - Free Deal Readiness Consultation | Startup Due Diligence"
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Schedule a free consultation to prepare your startup for investors, acquirers & auditors. 24hr response time. Expert legal, financial & compliance readiness services.')
+    }
+
     // Scroll animations
     const observerOptions = {
       threshold: 0.1,
