@@ -21,23 +21,18 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "DueReady - Deal Readiness & Due Diligence for Startups | Fundraising Prep",
-  description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits. Expert legal, financial & technical due diligence services. Free consultation - 4-8 week timeline.",
+  description: "Prepare your startup for fundraising, acquisition, or compliance. Legal, financial & technical due diligence — expert-led, clear scope, investor-ready.",
   keywords: "deal readiness, due diligence, startup fundraising, compliance audit, data room prep, legal readiness, fractional CFO, startup consulting",
   authors: [{ name: "DueReady" }],
   creator: "DueReady",
   publisher: "DueReady",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://dueready.com'),
+  metadataBase: new URL("https://dueready.com"),
   alternates: {
-    canonical: '/',
+    canonical: "https://dueready.com",
   },
   openGraph: {
     title: "DueReady - Deal Readiness & Due Diligence for Startups",
-    description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits. Expert services with 4-8 week timeline.",
+    description: "Prepare your startup for fundraising, acquisition, or compliance. Expert-led due diligence — clear scope, investor-ready.",
     url: "https://dueready.com",
     siteName: "DueReady",
     type: "website",
@@ -55,18 +50,18 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
     icon: [
-      { url: '/favicon.svg?v=5', type: 'image/svg+xml' },
-      { url: '/favicon.ico?v=5', sizes: '32x32' }
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
     ],
     apple: [
-      { url: '/favicon.svg?v=5', sizes: '180x180' }
+      { url: "/favicon.svg", sizes: "180x180" }
     ]
   },
 };

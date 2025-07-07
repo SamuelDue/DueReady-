@@ -14,7 +14,7 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 24,
+          fontSize: 14,
           background: '#000',
           width: '100%',
           height: '100%',
@@ -25,6 +25,8 @@ export default function Icon() {
           borderRadius: '50%',
           fontWeight: 'bold',
           fontFamily: 'Arial',
+          border: '1px solid #fff',
+          letterSpacing: '-1px',
         }}
       >
         DR
