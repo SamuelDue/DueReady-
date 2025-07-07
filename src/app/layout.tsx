@@ -20,29 +20,45 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "DueReady - Deal Readiness & Due Diligence for Startups | Fundraising Prep",
-  description: "Prepare your startup for fundraising, acquisition, or compliance. Legal, financial & technical due diligence — expert-led, clear scope, investor-ready.",
-  keywords: "deal readiness, due diligence, startup fundraising, compliance audit, data room prep, legal readiness, fractional CFO, startup consulting",
+  title: {
+    default: "DueReady - Deal Readiness for Startups | Financial, Legal & Compliance Experts",
+    template: "%s | DueReady"
+  },
+  description: "Get your startup deal-ready fast. Fractional experts for financial modeling, legal compliance, data room prep, and fundraising readiness. Trusted by 25+ startups.",
+  keywords: ["startup deal readiness", "fundraising preparation", "startup compliance", "fractional CFO", "startup legal", "data room preparation", "startup due diligence", "fundraising experts"],
   authors: [{ name: "DueReady" }],
   creator: "DueReady",
   publisher: "DueReady",
-  metadataBase: new URL("https://dueready.com"),
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://dueready.com'),
   alternates: {
-    canonical: "https://dueready.com",
+    canonical: '/',
   },
   openGraph: {
-    title: "DueReady - Deal Readiness & Due Diligence for Startups",
-    description: "Prepare your startup for fundraising, acquisition, or compliance. Expert-led due diligence — clear scope, investor-ready.",
-    url: "https://dueready.com",
-    siteName: "DueReady",
-    type: "website",
-    locale: "en_US",
+    title: "DueReady - Deal Readiness for Startups",
+    description: "Get your startup deal-ready fast. Fractional experts for financial modeling, legal compliance, data room prep, and fundraising readiness.",
+    url: 'https://dueready.com',
+    siteName: 'DueReady',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'DueReady - Deal Readiness for Startups',
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "DueReady - Deal Readiness & Due Diligence for Startups",
-    description: "Get your startup deal-ready for funding rounds, acquisitions & compliance audits.",
-    creator: "@dueready",
+    card: 'summary_large_image',
+    title: "DueReady - Deal Readiness for Startups",
+    description: "Get your startup deal-ready fast. Fractional experts for financial modeling, legal compliance, data room prep, and fundraising readiness.",
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -50,18 +66,18 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   icons: {
     icon: [
-      { url: "/favicon.svg?v=5", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=5", sizes: "32x32" }
+      { url: '/favicon.svg?v=5', type: 'image/svg+xml' },
+      { url: '/favicon.ico?v=5', sizes: '32x32' }
     ],
     apple: [
-      { url: "/favicon.svg?v=5", sizes: "180x180" }
+      { url: '/favicon.svg?v=5', sizes: '180x180' }
     ]
   },
 };
