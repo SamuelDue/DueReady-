@@ -1,12 +1,8 @@
-import { MetadataRoute } from 'next'
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /studio/
 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/dashboard/', '/admin/'],
-    },
-    sitemap: 'https://dueready.com/sitemap.xml',
-  }
-} 
+Sitemap: https://dueready.com/sitemap.xml 
